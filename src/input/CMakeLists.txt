@@ -91,8 +91,8 @@ target_link_libraries(CemuInput PRIVATE
 	CemuUtil
 	Boost::headers
 	Boost::program_options
-	glm::glm
-	pugixml::pugixml
+	glm
+	pugixml
 	SDL2::SDL2
 )
 if (ENABLE_HIDAPI)

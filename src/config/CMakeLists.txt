@@ -21,7 +21,7 @@ target_link_libraries(CemuConfig PRIVATE
 	CemuUtil
 	Boost::headers
 	Boost::program_options
-	pugixml::pugixml
+	pugixml
 )
 
 if (ENABLE_WXWIDGETS)

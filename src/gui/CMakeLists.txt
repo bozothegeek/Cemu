@@ -149,7 +149,7 @@ target_link_libraries(CemuGui PRIVATE
 	CURL::libcurl
 	libzip::zip
 	OpenSSL::Crypto
-	pugixml::pugixml
+	pugixml
 	ZArchive::zarchive
 )
 

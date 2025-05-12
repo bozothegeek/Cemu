@@ -556,7 +556,7 @@ target_link_libraries(CemuCafe PRIVATE
 	OpenSSL::Crypto
 	OpenSSL::SSL
 	PNG::PNG
-	pugixml::pugixml
+	pugixml
 	ZArchive::zarchive
 	ZLIB::ZLIB
 	zstd::zstd

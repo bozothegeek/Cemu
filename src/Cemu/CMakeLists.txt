@@ -46,7 +46,7 @@ target_link_libraries(CemuComponents PRIVATE
 	CURL::libcurl
 	OpenSSL::Crypto
 	OpenSSL::SSL
-	pugixml::pugixml
+	pugixml
 	ZLIB::ZLIB
 )
 
