@@ -116,7 +116,7 @@ uint8 Renderer::RGBComponentToSRGB(uint8 cli)
 
 static std::optional<fs::path> GenerateScreenshotFilename(bool isDRC)
 {
-	fs::path screendir = ActiveSettings::GetUserDataPath("screenshots");
+	fs::path screendir = "/recalbox/share/screenshots";
 	// build screenshot name with format Screenshot_YYYY-MM-DD_HH-MM-SS[_GamePad].png
 	// if the file already exists add a suffix counter (_2.png, _3.png etc)
 	std::time_t time_t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());

@@ -60,7 +60,17 @@ void KeyCache_Prepare()
 	sKeyCachePrepared = true;
 	g_keyCache.clear();
 	// load keys
-	auto keysPath = ActiveSettings::GetUserDataPath("keys.txt");
+	// Use /recalbox/share/bios/wiiu/cemu for the keys.txt directory, to match
+
+	std::string keysDir = "/recalbox/share/bios/wiiu/cemu";
+	// Let's first make sure the parent directory exists.
+	std::error_code err;
+	fs::create_directories(keysDir, err);
+	if (err) {
+		wxMessageBox("Unable to create /recalbox/share/bios/wiiu/cemu directory, to store the keys.txt file\nThis can happen if Cemu does not have write permission to /recalbox/share/bios/ directory, the disk is full or if anti-virus software is blocking Cemu.", "Error", wxOK | wxCENTRE | wxICON_ERROR);
+	}
+
+	auto keysPath = keysDir + "/keys.txt";
 	FileStream* fs_keys = FileStream::openFile2(keysPath);
 	if( !fs_keys )
 	{

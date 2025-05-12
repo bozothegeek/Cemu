@@ -235,7 +235,7 @@ void createCrashlog(EXCEPTION_POINTERS* e, PCONTEXT context)
 		p /= fmt::format("log_{:04d}{:02d}{:02d}_{:02d}{:02d}{:02d}.txt", 1900 + time.tm_year, time.tm_mon + 1, time.tm_mday, time.tm_year, time.tm_hour, time.tm_min, time.tm_sec);
 
 		std::error_code ec;
-		fs::copy_file(ActiveSettings::GetUserDataPath("log.txt"), p, ec);
+		fs::copy_file("/recalbox/share/system/configs/cemu/logs/cemu-log.txt", p, ec);
 	}
 
 	exit(0);

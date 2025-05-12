@@ -7,7 +7,7 @@
 
 #include "ActiveSettings.h"
 
-XMLCemuConfig_t g_config(L"settings.xml");
+XMLCemuConfig_t g_config(L"/recalbox/share/system/configs/cemu/settings.xml");
 
 void CemuConfig::SetMLCPath(fs::path path, bool save)
 {

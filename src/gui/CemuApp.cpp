@@ -153,11 +153,13 @@ void CemuApp::DeterminePaths(std::set<fs::path>& failedWriteAccess) // for Linux
 			return dir;
 		};
 		wxString homeDir = wxFileName::GetHomeDir();
-		user_data_path = (getEnvDir(wxS("XDG_DATA_HOME"), homeDir + wxS("/.local/share")) + "/" + appName).ToStdString();
-		config_path = (getEnvDir(wxS("XDG_CONFIG_HOME"), homeDir + wxS("/.config")) + "/" + appName).ToStdString();
+		user_data_path = (getEnvDir(wxS("XDG_DATA_HOME"), wxS("/recalbox/share/saves")) + "/" + "wiiu").ToStdString();
+		config_path = (getEnvDir(wxS("XDG_CONFIG_HOME"), wxS("/recalbox/share/system/configs")) + "/" + appName).ToStdString();
 		data_path = standardPaths.GetDataDir().ToStdString();
 		cache_path = standardPaths.GetUserDir(wxStandardPaths::Dir::Dir_Cache).ToStdString();
 		cache_path /= appName.ToStdString();
+		// pixL need to force path to saves directory
+		cache_path = "/recalbox/share/saves/wiiu";
 	}
 	ActiveSettings::SetPaths(isPortable, exePath, user_data_path, config_path, cache_path, data_path, failedWriteAccess);
 }

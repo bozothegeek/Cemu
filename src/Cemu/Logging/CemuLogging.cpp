@@ -101,7 +101,7 @@ void cemuLog_createLogFile(bool triggeredByCrash)
 	if (LogContext.file_stream.is_open())
 		return;
 
-	const auto path = cemuLog_GetLogFilePath();
+	const auto path = "/recalbox/share/system/configs/cemu/logs/cemu-log.txt";
 	LogContext.file_stream.open(path, std::ios::out);
 	if (LogContext.file_stream.fail())
 	{
