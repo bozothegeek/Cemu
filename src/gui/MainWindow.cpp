@@ -2280,8 +2280,8 @@ void MainWindow::RecreateMenu()
 
 	m_menuBar->Append(helpMenu, _("&Help"));
 
-	SetMenuBar(m_menuBar);
-	m_menu_visible = true;
+	SetMenuBar(nullptr);
+	m_menu_visible = false;
 
 	if (m_game_launched)
 	{
